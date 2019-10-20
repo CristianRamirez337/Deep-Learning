@@ -306,7 +306,7 @@ def conv_backward(dZ, cache):
     # Initialize dA_prev, dW, db with the correct shapes
     dA_prev = np.zeros((m, n_H_prev, n_W_prev, n_C_prev))                        
     dW = np.zeros((f, f, n_C_prev, n_C))
-    db = np.zeros((f, f, n_C_prev, n_C))
+    db = np.zeros((1, 1, 1, n_C))
 
     # Pad A_prev and dA_prev
     A_prev_pad = zero_pad(A_prev, pad)
@@ -315,8 +315,8 @@ def conv_backward(dZ, cache):
     for i in range(m):                       # loop over the training examples
         
         # select ith training example from A_prev_pad and dA_prev_pad
-        a_prev_pad = A_prev_pad[i, :, :, :]
-        da_prev_pad = dA_prev_pad[i, :, :, :]
+        a_prev_pad = A_prev_pad[i]
+        da_prev_pad = dA_prev_pad[i]
         
         for h in range(n_H):                   # loop over vertical axis of the output volume
             for w in range(n_W):               # loop over horizontal axis of the output volume
@@ -452,12 +452,12 @@ def pool_backward(dA, cache, mode = "max"):
                         # Create the mask from a_prev_slice (≈1 line)
                         mask = create_mask_from_window(a_prev_slice)
                         # Set dA_prev to be dA_prev + (the mask multiplied by the correct entry of dA) (≈1 line)
-                        dA_prev[i, vert_start: vert_end, horiz_start: horiz_end, c] += a_prev_slice * mask
+                        dA_prev[i, vert_start: vert_end, horiz_start: horiz_end, c] += dA[i, h, w, c] * mask
                         
                     elif mode == "average":
                         
                         # Get the value a from dA (≈1 line)
-                        da = np.sum(a_prev[vert_start:vert_end, horiz_start:horiz_end, c])
+                        da = dA[i, h, w, c]
                         # Define the shape of the filter as fxf (≈1 line)
                         shape = (f, f)
                         # Distribute it to get the correct slice of dA_prev. i.e. Add the distributed value of da. (≈1 line)
