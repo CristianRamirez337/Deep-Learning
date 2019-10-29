@@ -1,5 +1,5 @@
 
-# Install packages
+# Import libraries
 import time
 import numpy as np
 import h5py
