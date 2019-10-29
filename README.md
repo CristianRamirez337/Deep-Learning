@@ -1,5 +1,6 @@
 # Deep-Learning
-Deep Learning: Neural Networks
 
-Hi Humans!
+* Basic neural network architextures
+* Tutorials on Tensorflow and Keras
+* Neural network case studies
 
