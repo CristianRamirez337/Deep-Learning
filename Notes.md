@@ -10,7 +10,11 @@ each step, and thus the gradient can decrease expoentially quickly to zero (or, 
 During training, you often see that the magnitude/norm (≈learning speed) of the gradient of the shallower layers decrease 
 to zero rapidly as training proceeds.
 
-## Convolution block in ResNet
+## Identity block in Resnet
+There is also some evidence that the ease of learning an identity function accounts for ResNets' remarkable performance 
+even more so than skip connections helping with vanishing gradients.
+
+## Convolutional block in ResNet
 In the case when the input and output dimensions of a block don't match up, we can add a CONV layer (usually followed by
 BatchNormalization) in the shortcut path to resize the input X to a different dimension.
 
