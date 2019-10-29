@@ -20,5 +20,12 @@ BatchNormalization) in the shortcut path to resize the input X to a different di
 
 The CONV layer on the shortcut path does not use any non-linear activation function, as its main goal is to apply a (learned)
 linear function that resizes the dimension of the input.
+
+## Classification with localization
+### Define target label y
+y = [p_c, b_x, b_y, b_h, b_w, c1, c2, c3]
+The loss function can be defined as either:
+- squared error for all entries, or
+- logistic regression error for p_c, squared error for b_x, b_y, b_h, b_w, and log-likelihood error for c1, c2, c3
    
    
