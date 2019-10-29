@@ -1,23 +1,24 @@
 # Some Random Notes Taken Regarding Neural Networks
 
-## Very deep neural networks & ResNets
+## ResNet
+### Very deep neural networks & ResNets
 While a very deep neural network can represent very complex function and learn features at different levels of abstraction,
 there exists a huge barrier to training a very deep NN: the vanishing gradients. 
-
+<br/>
 During gradient descent, as you backprop from the final layer back to the first layer, you multiply by the weight matrix on
 each step, and thus the gradient can decrease expoentially quickly to zero (or, in rare cases, grow exponentially quickly      and "explode" to take very large values), which makes the gradient decent prohibitively slow.
 
 During training, you often see that the magnitude/norm (≈learning speed) of the gradient of the shallower layers decrease 
 to zero rapidly as training proceeds.
 
-## Identity block in Resnet
+### Identity block in Resnet
 There is also some evidence that the ease of learning an identity function accounts for ResNets' remarkable performance 
 even more so than skip connections helping with vanishing gradients.
-
-## Convolutional block in ResNet
+<br/>
+### Convolutional block in ResNet
 In the case when the input and output dimensions of a block don't match up, we can add a CONV layer (usually followed by
 BatchNormalization) in the shortcut path to resize the input X to a different dimension.
-
+<br/>
 The CONV layer on the shortcut path does not use any non-linear activation function, as its main goal is to apply a (learned)
 linear function that resizes the dimension of the input.
 
@@ -41,3 +42,6 @@ Choose anchor box shapes: can choose by hand or automatically by K-means.
 Some unsolved problems:
 - What if you have only two anchor boxes but detect three objects in a grid cell?
 - Two objects in a grid cell that have the same anchor box shape?
+<br/>
+### YOLO algorithm
+"You Only Look Once" (YOLO) is a popular algorithm because it achieves high accuracy while also being able to run in real-time. This algorithm "only looks once" at the image in the sense that it requires only one forward propagation pass through the network to make predictions. After non-max suppression, it then outputs recognized objects together with the bounding boxes.
