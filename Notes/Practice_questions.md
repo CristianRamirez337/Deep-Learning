@@ -7,4 +7,4 @@
    > Logistic unit, bx, by
 
 7. In the YOLO algorithm, at training time, only one cell ---the one containing the center/midpoint of an object--- is responsible for detecting this object.
-   True
+   > True
