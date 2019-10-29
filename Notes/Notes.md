@@ -43,5 +43,6 @@ Some unsolved problems:
 - What if you have only two anchor boxes but detect three objects in a grid cell?
 - Two objects in a grid cell that have the same anchor box shape?
 <br/>
+
 ### YOLO algorithm
 "You Only Look Once" (YOLO) is a popular algorithm because it achieves high accuracy while also being able to run in real-time. This algorithm "only looks once" at the image in the sense that it requires only one forward propagation pass through the network to make predictions. After non-max suppression, it then outputs recognized objects together with the bounding boxes.
