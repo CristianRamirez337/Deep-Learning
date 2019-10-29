@@ -9,5 +9,12 @@ each step, and thus the gradient can decrease expoentially quickly to zero (or, 
 
 During training, you often see that the magnitude/norm (≈learning speed) of the gradient of the shallower layers decrease 
 to zero rapidly as training proceeds.
+
+## Convolution block in ResNet
+In the case when the input and output dimensions of a block don't match up, we can add a CONV layer (usually followed by
+BatchNormalization) in the shortcut path to resize the input X to a different dimension.
+
+The CONV layer on the shortcut path does not use any non-linear activation function, as its main goal is to apply a (learned)
+linear function that resizes the dimension of the input.
    
    
