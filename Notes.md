@@ -33,8 +33,10 @@ The loss function can be defined as either:
 #### Landmark detection
 The landmark coordinates should be consistent across examples (e.g. l1 always represents 'noes tip').
 
+
 ### Convolutional implementation of sliding windows
 A MaxPooling layer with a stride of s corresponds to a window slided by a stride of s.
+
 
 ### Anchor box
 Choose anchor box shapes: can choose by hand or automatically by K-means.
