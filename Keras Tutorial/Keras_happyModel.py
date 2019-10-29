@@ -1,5 +1,5 @@
 
-# Install packages
+# Import libraries
 import numpy as np
 from keras import layers
 from keras.layers import Input, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, Conv2D
