@@ -21,12 +21,24 @@ BatchNormalization) in the shortcut path to resize the input X to a different di
 The CONV layer on the shortcut path does not use any non-linear activation function, as its main goal is to apply a (learned)
 linear function that resizes the dimension of the input.
 
-## Classification with localization
-### Define target label y
+## Object detection
+### Classification with localization
+#### Define target label y
 y = [p_c, b_x, b_y, b_h, b_w, c1, c2, c3]
 
 The loss function can be defined as either:
 - squared error for all entries, or
-- logistic regression error for p_c, squared error for b_x, b_y, b_h, b_w, and log-likelihood error for c1, c2, c3
-   
-   
+- logistic regression loss for p_c, squared error for b_x, b_y, b_h, b_w, and log-likelihood loss for c1, c2, c3
+
+#### Landmark detection
+The landmark coordinates should be consistent across examples (e.g. l1 always represents 'noes tip').
+
+### Convolutional implementation of sliding windows
+A MaxPooling layer with a stride of s corresponds to a window slided by a stride of s.
+
+### Anchor box
+Choose anchor box shapes: can choose by hand or automatically by K-means.
+
+Some unsolved problems:
+- What if you have only two anchor boxes but detect three objects in a grid cell?
+- Two objects in a grid cell that have the same anchor box shape?
