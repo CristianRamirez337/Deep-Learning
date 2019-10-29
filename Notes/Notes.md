@@ -15,6 +15,7 @@ to zero rapidly as training proceeds.
 There is also some evidence that the ease of learning an identity function accounts for ResNets' remarkable performance 
 even more so than skip connections helping with vanishing gradients.
 <br/>
+
 ### Convolutional block in ResNet
 In the case when the input and output dimensions of a block don't match up, we can add a CONV layer (usually followed by
 BatchNormalization) in the shortcut path to resize the input X to a different dimension.
@@ -33,9 +34,11 @@ The loss function can be defined as either:
 #### Landmark detection
 The landmark coordinates should be consistent across examples (e.g. l1 always represents 'noes tip').
 <br/>
+
 ### Convolutional implementation of sliding windows
 A MaxPooling layer with a stride of s corresponds to a window slided by a stride of s.
 <br/>
+
 ### Anchor box
 Choose anchor box shapes: can choose by hand or automatically by K-means.
 
