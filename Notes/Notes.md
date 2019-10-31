@@ -52,8 +52,12 @@ Some unsolved problems:
 ## Face recognition
 Some challenges of a face recognition system:
 - Only one training example for each person
-- Don't want to re-train the model every time new data (employee) is added into the database
+- Don't want to re-train the model every time new data (employee) is added into the database (softmax output doesn't work)
 
 ### Triplet loss
 Why we want to carefully choose triplets for training?
 - Randomly chosen triplets would be too "easy" for the network to learn, hence reduces computational efficiency.
+
+## Neural style transfer
+### Style matrix
+In linear algebra, the Gram matrix G of a set of vectors (v1,…,vn) is the matrix of dot products, whose entries are  Gij=np.dot(vi,vj)
