@@ -54,6 +54,13 @@ Some challenges of a face recognition system:
 - Only one training example for each person
 - Don't want to re-train the model every time new data (employee) is added into the database (softmax output doesn't work)
 
+### Encoding
+In Face Verification, you're given two images and you have to determine if they are of the same person. The simplest way to do this is to compare the two images pixel-by-pixel. If the distance between the raw images are less than a chosen threshold, it may be the same person.
+
+Of course, this algorithm performs really poorly, since the pixel values change dramatically due to variations in lighting, orientation of the person's face, even minor changes in head position, and so on.
+
+By using an encoding for each image, an element-wise comparison produces a more accurate judgement as to whether two pictures are of the same person.
+
 ### Triplet loss
 Why we want to carefully choose triplets for training?
 - Randomly chosen triplets would be too "easy" for the network to learn, hence reduces computational efficiency.
