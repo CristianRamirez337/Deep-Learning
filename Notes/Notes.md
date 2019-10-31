@@ -48,3 +48,12 @@ Some unsolved problems:
 
 ### YOLO algorithm
 "You Only Look Once" (YOLO) is a popular algorithm because it achieves high accuracy while also being able to run in real-time. This algorithm "only looks once" at the image in the sense that it requires only one forward propagation pass through the network to make predictions. After non-max suppression, it then outputs recognized objects together with the bounding boxes.
+
+## Face recognition
+Some challenges of a face recognition system:
+- Only one training example for each person
+- Don't want to re-train the model every time new data (employee) is added into the database
+
+### Triplet loss
+Why we want to carefully choose triplets for training?
+- Randomly chosen triplets would be too "easy" for the network to learn, hence reduces computational efficiency.
