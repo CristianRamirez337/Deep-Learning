@@ -229,7 +229,7 @@ tf.reset_default_graph()
 # Start interactive session
 sess = tf.InteractiveSession()
 
-content_image = scipy.misc.imread("images/my_image.jpg")
+content_image = scipy.misc.imread("images/louvre.jpg")
 content_image = reshape_and_normalize_image(content_image)
 
 style_image = scipy.misc.imread("images/monet.jpg")
