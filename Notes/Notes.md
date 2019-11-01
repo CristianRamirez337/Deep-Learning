@@ -68,3 +68,26 @@ Why we want to carefully choose triplets for training?
 ## Neural style transfer
 ### Style matrix
 In linear algebra, the Gram matrix G of a set of vectors (v1,…,vn) is the matrix of dot products, whose entries are  Gij=np.dot(vi,vj)
+
+## Sequence data
+Why not a traditional neural network?
+- Inputs and outputs can be differents lengths in different examples.
+> If we (zero) pad the input to be the length of the maximum length, then the total input size will be very large, resulting in a very large number of parameters.
+- Doesn't share features learned across different positions of text.
+
+### Pros and Cons for Character-level model
+Pro:
+- Get rid of the <UNK>
+
+Con:
+- Longer sequences
+- Not as good as word-level models at capturing long-range dependencies between how early parts of a sentence affect later
+  parts.
+- Computationally expensive to train
+
+## Recurrent Neural Network
+Vanishing gradients: not able to capture long-range dependencies
+> Gated recurrent unit (GRU)
+
+Sometimes, exploding gradients (NaN) also happen
+> Gradient clipping
