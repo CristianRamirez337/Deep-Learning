@@ -24,3 +24,13 @@
    > True
 5. (Q7) Neural style transfer is trained as a supervised learning task in which the goal is to input two images (xx), and train a network to output a new, synthesized image (yy).
    > False: images have no labels.
+
+## Recurrent Neural Networks
+1. (Q4) You are training this RNN language model. At the t-th time step, what is the RNN doing?
+> Estimating P(y<t> | y<1>, y<2>, …, y<t-1>)
+2. (Q5) You have finished training a language model RNN and are using it to sample random sentences. What are you doing at each time step tt?
+> (i) Use the probabilities output by the RNN to randomly sample a chosen word for that time-step as y<t>. (ii) Then pass this selected word to the next time-step.
+3. (Q7) Suppose you are training a LSTM. You have a 10000 word vocabulary, and are using an LSTM with 100-dimensional activations a<t>. What is the dimension of Γu at each time step?
+> 100
+3. (Q8) Alice proposes to simplify the GRU by always removing the Γu. I.e., setting Γu = 1. Betty proposes to simplify the GRU by removing the Γr. I. e., setting Γr = 1 always. Which of these models is more likely to work without vanishing gradient problems even when trained on very long input sequences?
+> Betty’s model (removing Γr), because if Γu≈0 for a timestep, the gradient can propagate back through that timestep without much decay.
