@@ -91,3 +91,18 @@ Vanishing gradients: not able to capture long-range dependencies
 
 Sometimes, exploding gradients (NaN) also happen
 > Gradient clipping
+
+## Word Embeddings and Transfer Learning
+1. Learn word embeddings from large text corpus. (1-100B words)
+   (Or download pre-trained embedding online.)
+2. Transfer embedding to new task with smaller training set. (say, 100k words)
+3. Optional: Continue to finetue the word embeddings with new data.
+
+The last step is optional, and it's usually useful when the task has a pretty big data set. 
+> When you try to transfer from some task A to some task B, the process of transfer learning is most useful when you happen to have a ton of data for A and a relatively small data set for B. And this is true for a lot of NLP tasks (e.g. name entity recognition, text summarization, co-reference resolution, parsing, etc.) and less true for some language modelling and machine translation.
+### T-SNE mapping
+T-SNE mapping is a complicated and highly non-linear process, and hence the analogical relationships that exist in the original high-dimensional space might or might not hold true after T-SNE mapping.
+
+### Context & Target pairs
+If your goal is to build a language model, it's natural to use, for example, the last four words as your context.
+If your goal is to learn word embeddings, then many other simpler contexts can also do remarkably well.
