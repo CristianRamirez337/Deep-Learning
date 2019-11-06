@@ -34,3 +34,31 @@
 > 100
 3. (Q8) Alice proposes to simplify the GRU by always removing the Γu. I.e., setting Γu = 1. Betty proposes to simplify the GRU by removing the Γr. I. e., setting Γr = 1 always. Which of these models is more likely to work without vanishing gradient problems even when trained on very long input sequences?
 > Betty’s model (removing Γr), because if Γu≈0 for a timestep, the gradient can propagate back through that timestep without much decay.
+
+## Natural Language Processing & Word Embeddings
+1. (Q2) What is t-SNE?
+> A non-linear dimensionality reduction technique
+2. (Q4) Which of these equations do you think should hold for a good word embedding? (Check all that apply)
+> e_boy - e_girl ≈ e_brother - e_sister
+
+> e_boy - e_brother ≈ e_girl - e_sister 
+3. (Q5) Let E be an embedding matrix, and let o1234 be a one-hot vector corresponding to word 1234. Then to get the embedding of word 1234, why don’t we call E * o1234 in Python?
+> It is computationally wasteful.
+4. (Q6) When learning word embeddings, we create an artificial task of estimating P(target∣context). It is okay if we do poorly on this artificial prediction task; the more important by-product of this task is that we learn a useful set of word embeddings.
+> True
+5. (Q7) In the word2vec algorithm, you estimate P(t∣c), where t is the target word and c is a context word. How are t and c chosen from the training set?
+> c and t are chosen to be nearby words.
+6. (Q8) Suppose you have a 10000 word vocabulary, and are learning 500-dimensional word embeddings. The word2vec model uses the softmax function.
+Which of these statements are correct? Check all that apply.
+> (True) θt and ec are both 500 dimensional vectors.
+
+> (True) θt and ec are both trained with an optimization algorithm such as Adam or gradient descent.
+
+> (False) After training, we should expect θt to be very close to ec when t and c are the same word.
+7. (Q9) Suppose you have a 10000 word vocabulary, and are learning 500-dimensional word embeddings.The GloVe model minimizes this objective.
+Which of these statements are correct? Check all that apply.
+> (True) θi and ej should be initialized randomly at the beginning of training.
+
+> (True) Xij is the number of times word i appears in the context of word j.
+
+> (True) The weighting function f(.) must satisfy f(0) = 0.
