@@ -127,3 +127,28 @@ However, despite the arbitrary linear transformation, the parallelogram map for 
 
 ### Sentiment classification
 By using an embedding matrix that is learned from a much larger text corpus, you can take knowledge from even not frequent words, and apply/generalize to you classification problem, even for words not in the labeled training set.
+
+## Beam search
+An approximate/heuristic search algorithm.
+### Length normalization
+The product of probabilities can be too small that results in underfloating, i.e. being too small for the floating part representation to be stored accurately by computer.
+> By taking log, we end up with a more numerically stable algorithm, less prone to rounding error.
+
+The long product of probabilities make the algorithm prefer shorter sentences.
+
+## Error analysis
+Go through dev set and choose examples where the algorithm produces a much worse output than human, and then ascribe problem to either the search algorithm (Beam search) or the objective function (RNN).
+
+When comparing P(y*|x) with P(y^|x), remember to take into consideration length normalization.
+> Take average of the probability of each word by Ty, i.e. length of the sentence (softer approach: Ty^alpha).
+
+If RNN is to blame,
+> Regularization, adding training data, different network architecture, ... (See Course 3)
+
+## Bleu score
+Human generated references would be provided as part of the dev set or as part of the test set.
+
+## Attention model
+One disadvantage: the computation cost is quadratic (Tx * Ty).
+
+Applications of Attention models: machine translation, image captioning, etc.
