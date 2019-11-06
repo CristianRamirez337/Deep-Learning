@@ -106,3 +106,24 @@ T-SNE mapping is a complicated and highly non-linear process, and hence the anal
 ### Context & Target pairs
 If your goal is to build a language model, it's natural to use, for example, the last four words as your context.
 If your goal is to learn word embeddings, then many other simpler contexts can also do remarkably well.
+
+### Skip-grams model
+Problem: the softmax layer is computationally explensive, requiring to sum over all the vocab size in the denominator.
+One possible solution: Hierarchical softmax, with each node as a binary logistic classification, reduces the computation cost from linear of |v| to log|v|. In practice, the hierarchical softmax tree is set up such that the more frequent words tend to be up in the tree while the less frequent words are burried deep downside the tree.
+
+#### Negative sampling model
+Instead of using a v-weight softmax classification, we now have v binary logistic regression classifications, and on each iteration, we choose 1 positive example & K negative examples, hence train (K+1) binary classifications.
+
+How to select the negative examples?
+> Choose a distribution that lies between the two extremes (i.e. empirical distribution and uniform distribution).
+
+### GloVe model
+Goal: learn vectors whose inner product is a good predictor for how often two words occur together.
+
+### A note on featurization view of word embeddings
+For learned word vectors, it's difficult to look at individual components and assign human interpretation, as the linear transformation can be arbitrary, not well-aligned with humanly interpretable axes, and sometimes even not orthogonal (?).
+
+However, despite the arbitrary linear transformation, the parallelogram map for describing analogy still works.
+
+### Sentiment classification
+By using an embedding matrix that is learned from a much larger text corpus, you can take knowledge from even not frequent words, and apply/generalize to you classification problem, even for words not in the labeled training set.
