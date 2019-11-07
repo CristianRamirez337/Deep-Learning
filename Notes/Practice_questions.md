@@ -62,3 +62,16 @@ Which of these statements are correct? Check all that apply.
 > (True) Xij is the number of times word i appears in the context of word j.
 
 > (True) The weighting function f(.) must satisfy f(0) = 0.
+
+## Sequence models & Attention mechanism
+1. (Q1) Consider using this encoder-decoder model for machine translation.
+This model is a “conditional language model” in the sense that the encoder portion (shown in green) is modeling the probability of the input sentence x.
+> False
+2. (Q8) Compared to the encoder-decoder model shown in Question 1 of this quiz (which does not use an attention mechanism), we expect the attention model to have the greatest advantage when:
+> The input sequence length Tx is large.
+3. (Q10) In trigger word detection, x<t> is:
+> (True) Features of the audio (such as spectrogram features) at time t.
+> The t-th input word, represented as either a one-hot vector or a word embedding.
+> Whether the trigger word is being said at time t.
+> Whether someone has just finished saying the trigger word at time t.
+
