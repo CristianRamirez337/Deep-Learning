@@ -2,7 +2,9 @@
 
 This repo is regarding:
 
-* Basic neural network architextures
+* Deep neural network architextures
 * Tutorials on Tensorflow and Keras
 * Neural network case studies
+* Convolutional neural networks
+* Sequence models (NLP, Speech recognition, etc.)
 
